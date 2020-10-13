@@ -38,6 +38,18 @@ To take a snapshot of Drupal's current content, do
 
 See [snapshots](#snapshots) for more information on how to make and publish snapshots
 
+## Make targets
+
+There are several Make targets in the `Makefile`, and its idc-specific companion `idc.Makefile` (which are included by default,
+so no need to do anything special other than `make` to invoke them).  A few useful targets are as follows:
+
+* *`make bootstrap`* Burn everything down and create a fresh installation from scratch, deleting any pre-existing data, and starting from a completely empty state.  Only the list of modules in `composer.json` (and dependencies in `composer.lock`) survives the process.
+* *`make composer-install`*  Use the Drupal container to run a `composer install`.  This avoids having to install composer on your local system.
+* *`make cache-rebuild`* Uses Drush inside the Drupal container to rebuild Drupal's cache.
+* *`make config-export`* Exports all current active Drupal config to the `codebase/config/sync` directory, so that it can be committed to git.
+* *`make snapshot`* Create a snapshot of the current Drupal state (db, content files, etc), so that you can reset to this state at will, or push it so that others can.
+* *`make up`* Brings up the development environment, including running `composer install`.
+
 ## Snapshots
 
 Snapshots are Docker images that contain Drupal state (content files, database, SOLR indexes, Fedora files, etc).  When Docker starts,
