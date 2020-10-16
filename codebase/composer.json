@@ -23,7 +23,7 @@
         "drupal/admin_toolbar": "^2.0",
         "drupal/console": "~1.0",
         "drupal/content_browser": "^1.0@alpha",
-        "drupal/core": "^8.8.1",
+        "drupal/core": "8.9.7",
         "drupal/core-composer-scaffold": "^8.8.0",
         "drupal/devel": "^2.0",
         "drupal/facets": "^1.3",
