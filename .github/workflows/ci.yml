@@ -45,11 +45,7 @@ jobs:
             # Log in to Docker, if we have the secrets
             - name: Docker Login
               if: ${{ env.DOCKER_USER != null }}
-              uses: docker/login-action@v1
-              with:
-                registry: ghcr.io
-                username: ${{ env.DOCKER_USER }}
-                password: ${{ secrets.DOCKER_PASS }}
+              run: echo '${{ env.DOCKER_USER }}'
             
             # Push docker images
             - name: Docker Push
