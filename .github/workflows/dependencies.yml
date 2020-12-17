@@ -57,12 +57,12 @@ jobs:
           name: pr-dependencies
       - name: Calculate diff
         run: |
-          echo "Dependency diff between development base branch ${{ github.base_ref }} and PR branch ${{ github.head_ref }}" >> diff.out
-          echo '```diff' >> diff.out
-          git diff --no-index -w deps.development* deps.pr* >> diff.out
-          echo '```' >> diff.out
+          echo "Dependency diff between development base branch ${{ github.base_ref }} and PR branch ${{ github.head_ref }}" >> .github/workflows/diff.out
+          echo '```diff' >> .github/workflows/diff.out
+          git diff --no-index -w deps.development* deps.pr* >> d.github/workflows/iff.out
+          echo '```' >> .github/workflows/diff.out
       - uses: harupy/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          filename: ./diff.out
+          filename: diff.out
