@@ -47,6 +47,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
+      - name: Checkout PR Branch
+        uses: actions/checkout@v2
       - name: Download Base Deps
         uses: actions/download-artifact@v2
         with:
