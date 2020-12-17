@@ -1,0 +1,68 @@
+name: Dependency Diff
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  base:
+    name: Calculate and Upload Base Dependencies
+    # This should always be true for pull request events
+    if: ${{ github.base_ref != null }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout Base Branch
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.base_ref }}
+      - name: Start IDC
+        run: make up
+      - name: Capture Dependencies
+        run: docker-compose exec -T drupal composer show > deps.development.${{ github.base_ref }}
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: base-dependencies
+          path: deps.development.${{ github.base_ref }}
+  pr:
+    name: Calculate and Upload PR Dependencies
+    # This should always be true for pull request events
+    if: ${{ github.head_ref != null }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout PR Branch
+        uses: actions/checkout@v2
+      - name: Start IDC
+        run: make up
+      - name: Capture Dependencies
+        run: docker-compose exec -T drupal composer show > deps.pr-${{ github.event.number }}.${{ github.head_ref }}
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: pr-dependencies
+          path: deps.pr-${{ github.event.number }}.${{ github.head_ref }}
+  diff:
+    name: Create and Upload Diff
+    needs: [base, pr]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Download Base Deps
+        uses: actions/download-artifact@v2
+        with:
+          name: base-dependencies
+      - name: Download PR Deps
+        uses: actions/download-artifact@v2
+        with:
+          name: pr-dependencies
+      - name: Calculate diff
+        run: |
+          echo "Dependency diff between development base branch ${{ github.base_ref }} and PR branch ${{ github.head_ref }}" >> diff.out
+          echo '```diff' >> diff.out
+          git diff --no-index -w deps.development* deps.pr* >> diff.out
+          echo '```' >> diff.out
+      - uses: harupy/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: ./diff.out
