@@ -61,7 +61,7 @@ jobs:
         run: |
           echo "Dependency diff between development base branch ${{ github.base_ref }} and PR branch ${{ github.head_ref }}" >> .github/workflows/diff.out
           echo '```diff' >> .github/workflows/diff.out
-          git diff --no-index -w deps.development* deps.pr* >> d.github/workflows/iff.out
+          git diff --no-index -w deps.development* deps.pr* >> .github/workflows/diff.out
           echo '```' >> .github/workflows/diff.out
       - uses: harupy/comment-on-pr@master
         env:
