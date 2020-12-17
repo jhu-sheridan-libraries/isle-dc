@@ -1,7 +1,7 @@
 name: Dependency Diff
 on:
   pull_request:
-    branches: [main]
+    branches: [development]
 jobs:
   base:
     name: Calculate and Upload Base Dependencies
