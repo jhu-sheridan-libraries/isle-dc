@@ -47,8 +47,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: Checkout PR Branch
-        uses: actions/checkout@v2
       - name: Download Base Deps
         uses: actions/download-artifact@v2
         with:
@@ -59,11 +57,12 @@ jobs:
           name: pr-dependencies
       - name: Calculate diff
         run: |
-          echo "Dependency diff between development base branch ${{ github.base_ref }} and PR branch ${{ github.head_ref }}" >> .github/workflows/diff.out
-          echo '```diff' >> .github/workflows/diff.out
-          git diff --no-index -w deps.development* deps.pr* >> .github/workflows/diff.out
-          echo '```' >> .github/workflows/diff.out
-      - uses: harupy/comment-on-pr@master
+          echo "Dependency diff between development base branch ${{ github.base_ref }} and PR branch ${{ github.head_ref }}" >> diff.out
+          echo '```diff' >> diff.out
+          git diff --no-index -w deps.development* deps.pr* >> diff.out
+          echo '```' >> diff.out
+      - name: Comment on PR
+        uses: machine-learning-apps/pr-comment@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
