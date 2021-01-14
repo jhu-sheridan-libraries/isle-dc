@@ -149,20 +149,26 @@ content:
     weight: 21
     label: above
     settings:
-      link_to_entity: false
+      date_separator: dash
+      date_order: big_endian
+      month_format: mm
+      day_format: dd
     third_party_settings: {  }
-    type: string
+    type: edtf_default
     region: content
   field_date_copyrighted:
-    weight: 22
+    weight: 23
     label: above
     settings:
-      link_to_entity: false
+      date_separator: dash
+      date_order: big_endian
+      month_format: mm
+      day_format: dd
     third_party_settings: {  }
-    type: string
+    type: edtf_default
     region: content
   field_date_created:
-    weight: 23
+    weight: 22
     label: above
     settings:
       date_separator: dash
@@ -229,7 +235,7 @@ content:
     type: string
     region: content
   field_extent:
-    weight: 40
+    weight: 39
     label: above
     settings:
       link_to_entity: false
@@ -247,7 +253,7 @@ content:
     type: boolean
     region: content
   field_finding_aid:
-    weight: 37
+    weight: 36
     label: above
     settings:
       trim_length: 80
@@ -267,7 +273,7 @@ content:
       link: true
     third_party_settings: {  }
   field_geoportal_link:
-    weight: 39
+    weight: 38
     label: above
     settings:
       trim_length: 80
@@ -307,7 +313,7 @@ content:
     type: string
     region: content
   field_jhir:
-    weight: 42
+    weight: 40
     label: above
     settings:
       trim_length: 80
@@ -327,7 +333,7 @@ content:
       link: true
     third_party_settings: {  }
   field_library_catalog_link:
-    weight: 38
+    weight: 37
     label: above
     settings:
       trim_length: 80
@@ -404,7 +410,7 @@ content:
     type: reference_value_formatter
     region: content
   field_title_language:
-    weight: 43
+    weight: 41
     label: above
     settings:
       link: true
