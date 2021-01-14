@@ -107,10 +107,10 @@ third_party_settings:
       region: content
     group_dates:
       children:
-        - field_date_available
-        - field_date_copyrighted
         - field_date_created
         - field_date_published
+        - field_date_available
+        - field_date_copyrighted
         - group_date_solr_year
       parent_name: ''
       weight: 1
@@ -196,7 +196,7 @@ third_party_settings:
       children:
         - field_years
       parent_name: group_dates
-      weight: 43
+      weight: 44
       format_type: details
       region: content
       format_settings:
@@ -310,20 +310,22 @@ content:
     type: typed_relation_default
     region: content
   field_date_available:
-    weight: 38
+    weight: 42
     settings:
-      size: 60
-      placeholder: ''
+      strict_dates: false
+      intervals: true
+      sets: false
     third_party_settings: {  }
-    type: string_textfield
+    type: edtf_default
     region: content
   field_date_copyrighted:
-    weight: 39
+    weight: 43
     settings:
-      size: 60
-      placeholder: ''
+      strict_dates: false
+      intervals: true
+      sets: false
     third_party_settings: {  }
-    type: string_textfield
+    type: edtf_default
     region: content
   field_date_created:
     weight: 40
@@ -335,7 +337,7 @@ content:
     type: edtf_default
     region: content
   field_date_published:
-    weight: 42
+    weight: 41
     settings:
       strict_dates: 0
       intervals: 0
