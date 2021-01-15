@@ -6372,12 +6372,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhu-idc/controlled_access_terms.git",
-                "reference": "c7706dbbfd87367e94ce8faae48a52494b6ae10d"
+                "reference": "8347fa88f6eb8e88ed6751b75a4a5535672d8f5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhu-idc/controlled_access_terms/zipball/c7706dbbfd87367e94ce8faae48a52494b6ae10d",
-                "reference": "c7706dbbfd87367e94ce8faae48a52494b6ae10d",
+                "url": "https://api.github.com/repos/jhu-idc/controlled_access_terms/zipball/8347fa88f6eb8e88ed6751b75a4a5535672d8f5b",
+                "reference": "8347fa88f6eb8e88ed6751b75a4a5535672d8f5b",
                 "shasum": ""
             },
             "require": {
@@ -6419,7 +6419,7 @@
                 "issues": "https://github.com/jhu-idc/controlled_access_terms/issues",
                 "source": "https://github.com/jhu-idc/controlled_access_terms/tree/8.x-1.x"
             },
-            "time": "2021-01-14T13:18:53+00:00"
+            "time": "2021-01-15T21:34:30+00:00"
         },
         {
             "name": "jhu-idc/islandora_defaults",
