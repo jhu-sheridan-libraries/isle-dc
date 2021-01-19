@@ -793,22 +793,10 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $settings['config_sync_directory'] = '/var/www/drupal/config/sync';
-$databases['default']['default'] = array (
-  'database' => 'drupal_default',
-  'username' => 'drupal_default',
-  'password' => 'password',
-  'prefix' => '',
-  'host' => 'mariadb-idc.traefik.me',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-$settings['flysystem']['fedora']['driver'] = 'fedora';
-$settings['flysystem']['fedora']['config']['root'] = 'http://fcrepo.isle-dc.localhost/fcrepo/rest/';
 $databases['default']['default']['database'] = 'drupal_default';
 $databases['default']['default']['username'] = 'drupal_default';
-$databases['default']['default']['password'] = 'password';
-$databases['default']['default']['host'] = 'mariadb-idc.traefik.me';
+$databases['default']['default']['password'] = getenv('DRUPAL_DEFAULT_DB_PASSWORD');
+$databases['default']['default']['host'] = getenv('DRUPAL_DEFAULT_DB_HOST');
 $databases['default']['default']['port'] = '3306';
 $databases['default']['default']['prefix'] = '';
 $databases['default']['default']['driver'] = 'mysql';
