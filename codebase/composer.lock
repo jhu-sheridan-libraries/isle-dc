@@ -6222,12 +6222,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhu-idc/islandora_defaults.git",
-                "reference": "5a2ccf749f9821491f01e9a9dc97b13562629f60"
+                "reference": "bcef380db3ca17f940530cf28eb73dc57c6a62b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhu-idc/islandora_defaults/zipball/5a2ccf749f9821491f01e9a9dc97b13562629f60",
-                "reference": "5a2ccf749f9821491f01e9a9dc97b13562629f60",
+                "url": "https://api.github.com/repos/jhu-idc/islandora_defaults/zipball/bcef380db3ca17f940530cf28eb73dc57c6a62b4",
+                "reference": "bcef380db3ca17f940530cf28eb73dc57c6a62b4",
                 "shasum": ""
             },
             "require": {
@@ -6253,7 +6253,7 @@
                 "issues": "https://github.com/jhu-idc/islandora_defaults/issues",
                 "source": "https://github.com/jhu-idc/islandora_defaults/tree/8.x-1.x"
             },
-            "time": "2021-01-21T01:56:28+00:00"
+            "time": "2021-01-21T19:32:30+00:00"
         },
         {
             "name": "jhu-idc/reference_value_pair",
@@ -12839,12 +12839,12 @@
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },
