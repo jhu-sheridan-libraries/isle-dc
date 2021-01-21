@@ -235,7 +235,11 @@ content:
     type: string
     region: content
   field_extent:
+<<<<<<< HEAD
     weight: 36
+=======
+    weight: 39
+>>>>>>> 4118f621b6fa9da69ada552c38835fc85fce01b6
     label: above
     settings:
       link_to_entity: false
@@ -253,7 +257,11 @@ content:
     type: boolean
     region: content
   field_finding_aid:
+<<<<<<< HEAD
     weight: 33
+=======
+    weight: 36
+>>>>>>> 4118f621b6fa9da69ada552c38835fc85fce01b6
     label: above
     settings:
       trim_length: 80
@@ -273,7 +281,11 @@ content:
       link: true
     third_party_settings: {  }
   field_geoportal_link:
+<<<<<<< HEAD
     weight: 35
+=======
+    weight: 38
+>>>>>>> 4118f621b6fa9da69ada552c38835fc85fce01b6
     label: above
     settings:
       trim_length: 80
@@ -313,7 +325,11 @@ content:
     type: string
     region: content
   field_jhir:
+<<<<<<< HEAD
     weight: 37
+=======
+    weight: 40
+>>>>>>> 4118f621b6fa9da69ada552c38835fc85fce01b6
     label: above
     settings:
       trim_length: 80
@@ -333,7 +349,11 @@ content:
       link: true
     third_party_settings: {  }
   field_library_catalog_link:
+<<<<<<< HEAD
     weight: 34
+=======
+    weight: 37
+>>>>>>> 4118f621b6fa9da69ada552c38835fc85fce01b6
     label: above
     settings:
       trim_length: 80
@@ -410,7 +430,11 @@ content:
     type: reference_value_formatter
     region: content
   field_title_language:
+<<<<<<< HEAD
     weight: 38
+=======
+    weight: 41
+>>>>>>> 4118f621b6fa9da69ada552c38835fc85fce01b6
     label: above
     settings:
       link: true
