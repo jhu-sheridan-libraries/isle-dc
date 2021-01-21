@@ -6427,12 +6427,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhu-idc/islandora_defaults.git",
-                "reference": "0efbf1c61b029bdb7bb958321b4dce90b90757bf"
+                "reference": "5a2ccf749f9821491f01e9a9dc97b13562629f60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhu-idc/islandora_defaults/zipball/0efbf1c61b029bdb7bb958321b4dce90b90757bf",
-                "reference": "0efbf1c61b029bdb7bb958321b4dce90b90757bf",
+                "url": "https://api.github.com/repos/jhu-idc/islandora_defaults/zipball/5a2ccf749f9821491f01e9a9dc97b13562629f60",
+                "reference": "5a2ccf749f9821491f01e9a9dc97b13562629f60",
                 "shasum": ""
             },
             "require": {
@@ -6458,7 +6458,7 @@
                 "issues": "https://github.com/jhu-idc/islandora_defaults/issues",
                 "source": "https://github.com/jhu-idc/islandora_defaults/tree/8.x-1.x"
             },
-            "time": "2021-01-14T13:18:28+00:00"
+            "time": "2021-01-21T01:56:28+00:00"
         },
         {
             "name": "jhu-idc/reference_value_pair",
@@ -6466,12 +6466,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhu-idc/reference_value_pair.git",
-                "reference": "50bf98c092133d70e9261cd2ab4717f1dd75f453"
+                "reference": "192519a0dd8597634c3bf814289592d190c006e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhu-idc/reference_value_pair/zipball/50bf98c092133d70e9261cd2ab4717f1dd75f453",
-                "reference": "50bf98c092133d70e9261cd2ab4717f1dd75f453",
+                "url": "https://api.github.com/repos/jhu-idc/reference_value_pair/zipball/192519a0dd8597634c3bf814289592d190c006e7",
+                "reference": "192519a0dd8597634c3bf814289592d190c006e7",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -6487,7 +6487,7 @@
                 "issues": "http://github.com/jhu-idc/reference_value_pair",
                 "source": "http://github.com/jhu-idc/reference_value_pair"
             },
-            "time": "2021-01-08T22:06:46+00:00"
+            "time": "2021-01-20T21:54:36+00:00"
         },
         {
             "name": "jhu_idc/idc_migration",
