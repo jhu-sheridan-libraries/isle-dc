@@ -16,7 +16,7 @@ source:
   plugin: csv
   path: modules/contrib/controlled_access_terms/modules/controlled_access_terms_defaults/migrate/rights.csv
   header_row_count: 1
-  keys:
+  ids:
     - uid
 process:
   name: name
