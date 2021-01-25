@@ -6372,12 +6372,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhu-idc/controlled_access_terms.git",
-                "reference": "8347fa88f6eb8e88ed6751b75a4a5535672d8f5b"
+                "reference": "ea1d9910f093c2f8e08570ff2cfc4a97a64b7c1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhu-idc/controlled_access_terms/zipball/8347fa88f6eb8e88ed6751b75a4a5535672d8f5b",
-                "reference": "8347fa88f6eb8e88ed6751b75a4a5535672d8f5b",
+                "url": "https://api.github.com/repos/jhu-idc/controlled_access_terms/zipball/ea1d9910f093c2f8e08570ff2cfc4a97a64b7c1f",
+                "reference": "ea1d9910f093c2f8e08570ff2cfc4a97a64b7c1f",
                 "shasum": ""
             },
             "require": {
@@ -6419,7 +6419,7 @@
                 "issues": "https://github.com/jhu-idc/controlled_access_terms/issues",
                 "source": "https://github.com/jhu-idc/controlled_access_terms/tree/8.x-1.x"
             },
-            "time": "2021-01-15T21:34:30+00:00"
+            "time": "2021-01-25T18:22:41+00:00"
         },
         {
             "name": "jhu-idc/islandora_defaults",
@@ -15999,5 +15999,6 @@
     "platform": {
         "php": ">=7.0.8"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
