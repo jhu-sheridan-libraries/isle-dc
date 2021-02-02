@@ -139,6 +139,11 @@
             "drush/Commands/contrib/{$name}": [
                 "type:drupal-drush"
             ]
+        },
+        "patches": {
+            "simplesamlphp/simplesamlphp": {
+                "SimpleSAMLphp config": "patches/simplesaml_config.patch"
+            }
         }
     }
 }
