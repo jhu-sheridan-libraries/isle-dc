@@ -120,3 +120,21 @@ type ExpectedFamily struct {
 	}
 	KnowsAbout []string `json:"knowsAbout"`
 }
+
+// Represents the expected results of a migrated Language taxonomy term
+type ExpectedLanguage struct {
+	Type         string
+	Bundle       string
+	Name         string
+	LanguageCode string `json:"language_code"`
+	Authority    []struct {
+		Uri    string
+		Title  string
+		Source string
+	}
+	Description struct {
+		Value     string
+		Format    string
+		Processed string
+	}
+}
