@@ -108,7 +108,7 @@ process:
             source: value
           -
             plugin: explode
-            delimiter: ';'
+            delimiter: ;
           -
             plugin: extract
             index:
@@ -124,7 +124,7 @@ process:
             source: value
           -
             plugin: explode
-            delimiter: ';'
+            delimiter: ;
           -
             plugin: extract
             index:

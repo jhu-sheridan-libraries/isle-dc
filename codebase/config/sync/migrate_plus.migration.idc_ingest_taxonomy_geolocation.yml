@@ -59,7 +59,7 @@ process:
         uri:
           -
             plugin: concat
-            delimiter: 'node/'
+            delimiter: node/
             source:
               - constants/NODE
               - '@pseudo_id'
