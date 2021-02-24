@@ -34,8 +34,7 @@ func Test_VerifyTaxonomyTermPerson(t *testing.T) {
 	// sanity check the expected json
 	assert.Equal(t, "taxonomy_term", expectedJson.Type)
 	assert.Equal(t, "person", expectedJson.Bundle)
-	assert.Equal(t, "Ansel", expectedJson.FirstName)
-	assert.Equal(t, "Wikidata", expectedJson.Authority[0].Name)
+	assert.Equal(t, "Ansel Easton", expectedJson.RestOfName[0])
 
 	u := &JsonApiUrl{
 		t:            t,
@@ -43,7 +42,7 @@ func Test_VerifyTaxonomyTermPerson(t *testing.T) {
 		drupalEntity: expectedJson.Type,
 		drupalBundle: expectedJson.Bundle,
 		filter:       "name",
-		value:        fmt.Sprintf("%s %s %s", expectedJson.FirstName, expectedJson.MiddleName, expectedJson.LastName),
+		value:        expectedJson.Name,
 	}
 
 	// retrieve json of the migrated entity from the jsonapi and unmarshal the single response
@@ -57,21 +56,15 @@ func Test_VerifyTaxonomyTermPerson(t *testing.T) {
 	actual := personRes.JsonApiData[0]
 	assert.Equal(t, expectedJson.Type, actual.Type.entity())
 	assert.Equal(t, expectedJson.Bundle, actual.Type.bundle())
-	assert.Equal(t, expectedJson.Title, actual.JsonApiAttributes.PreferredNamePrefix[0])
-	assert.Equal(t, expectedJson.AltTitle, actual.JsonApiAttributes.AltNamePrefix[0])
-	assert.Equal(t, fmt.Sprintf("%s %s", expectedJson.FirstName, expectedJson.MiddleName), actual.JsonApiAttributes.PreferredNameRest[0])
-	assert.Equal(t, fmt.Sprintf("%s %s", expectedJson.AltFirstName, expectedJson.AltMiddleName), actual.JsonApiAttributes.AltPreferredNameRest[0])
-	assert.Equal(t, expectedJson.LastName, actual.JsonApiAttributes.PrimaryPartOfName)
-	assert.Equal(t, expectedJson.AltLastName, actual.JsonApiAttributes.AltPrimaryPartOfName[0])
-	assert.Equal(t, expectedJson.Suffix, actual.JsonApiAttributes.PreferredNameSuffix[0])
-	assert.Equal(t, expectedJson.AltSuffix, actual.JsonApiAttributes.AltNameSuffix[0])
-	assert.Equal(t, expectedJson.Number, actual.JsonApiAttributes.PreferredNameNumber[0])
-	assert.Equal(t, expectedJson.AltNumber, actual.JsonApiAttributes.AltNameNumber[0])
-	assert.Equal(t, expectedJson.Born, actual.JsonApiAttributes.Dates[0])
-	assert.Equal(t, expectedJson.Died, actual.JsonApiAttributes.Dates[1])
+	assert.Equal(t, expectedJson.PrimaryName, actual.JsonApiAttributes.PrimaryPartOfName)
+	assert.ElementsMatch(t, expectedJson.RestOfName, actual.JsonApiAttributes.PreferredNameRest)
+	assert.ElementsMatch(t, expectedJson.Prefix, actual.JsonApiAttributes.PreferredNamePrefix)
+	assert.ElementsMatch(t, expectedJson.Suffix, actual.JsonApiAttributes.PreferredNameSuffix)
+	assert.ElementsMatch(t, expectedJson.Number, actual.JsonApiAttributes.PreferredNameNumber)
+	assert.ElementsMatch(t, expectedJson.AltName, actual.JsonApiAttributes.PersonAlternateName)
+	assert.ElementsMatch(t, expectedJson.Date, actual.JsonApiAttributes.Dates)
 	assert.Equal(t, expectedJson.Authority[0].Uri, actual.JsonApiAttributes.Authority[0].Uri)
 	assert.Equal(t, expectedJson.Authority[0].Type, actual.JsonApiAttributes.Authority[0].Source)
-	assert.Equal(t, expectedJson.Authority[0].Name, actual.JsonApiAttributes.Authority[0].Title)
 	assert.True(t, len(actual.JsonApiAttributes.Description.Processed) > 0)
 	assert.Equal(t, expectedJson.Description.Processed, actual.JsonApiAttributes.Description.Processed)
 	assert.True(t, len(actual.JsonApiAttributes.Description.Value) > 0)
@@ -128,7 +121,6 @@ func Test_VerifyTaxonomyTermAccessRights(t *testing.T) {
 	assert.Equal(t, len(expectedJson.Authority), len(actual.JsonApiAttributes.Authority))
 	assert.Equal(t, 2, len(actual.JsonApiAttributes.Authority))
 	for i, v := range actual.JsonApiAttributes.Authority {
-		assert.Equal(t, expectedJson.Authority[i].Title, v.Title)
 		assert.Equal(t, expectedJson.Authority[i].Source, v.Source)
 		assert.Equal(t, expectedJson.Authority[i].Uri, v.Uri)
 	}
@@ -165,7 +157,6 @@ func Test_VerifyTaxonomyCopyrightAndUse(t *testing.T) {
 	assert.Equal(t, len(expectedJson.Authority), len(actual.JsonApiAttributes.Authority))
 	assert.Equal(t, 2, len(actual.JsonApiAttributes.Authority))
 	for i, v := range actual.JsonApiAttributes.Authority {
-		assert.Equal(t, expectedJson.Authority[i].Title, v.Title)
 		assert.Equal(t, expectedJson.Authority[i].Source, v.Source)
 		assert.Equal(t, expectedJson.Authority[i].Uri, v.Uri)
 	}
@@ -204,7 +195,6 @@ func Test_VerifyTaxonomyTermFamily(t *testing.T) {
 	assert.Equal(t, len(expectedJson.Authority), len(actual.JsonApiAttributes.Authority))
 	assert.Equal(t, 2, len(actual.JsonApiAttributes.Authority))
 	for i, v := range actual.JsonApiAttributes.Authority {
-		assert.Equal(t, expectedJson.Authority[i].Title, v.Title)
 		assert.Equal(t, expectedJson.Authority[i].Source, v.Source)
 		assert.Equal(t, expectedJson.Authority[i].Uri, v.Uri)
 	}
@@ -268,7 +258,6 @@ func Test_VerifyTaxonomyTermGenre(t *testing.T) {
 	assert.Equal(t, len(expectedJson.Authority), len(actual.JsonApiAttributes.Authority))
 	assert.Equal(t, 2, len(actual.JsonApiAttributes.Authority))
 	for i, v := range actual.JsonApiAttributes.Authority {
-		assert.Equal(t, expectedJson.Authority[i].Title, v.Title)
 		assert.Equal(t, expectedJson.Authority[i].Source, v.Source)
 		assert.Equal(t, expectedJson.Authority[i].Uri, v.Uri)
 	}
@@ -305,7 +294,6 @@ func Test_VerifyTaxonomyTermGeolocation(t *testing.T) {
 	assert.Equal(t, len(expectedJson.Authority), len(actual.JsonApiAttributes.Authority))
 	assert.Equal(t, 2, len(actual.JsonApiAttributes.Authority))
 	for i, v := range actual.JsonApiAttributes.Authority {
-		assert.Equal(t, expectedJson.Authority[i].Title, v.Title)
 		assert.Equal(t, expectedJson.Authority[i].Source, v.Source)
 		assert.Equal(t, expectedJson.Authority[i].Uri, v.Uri)
 	}
@@ -351,7 +339,6 @@ func Test_VerifyTaxonomyTermResourceType(t *testing.T) {
 	assert.Equal(t, len(expectedJson.Authority), len(actual.JsonApiAttributes.Authority))
 	assert.Equal(t, 2, len(actual.JsonApiAttributes.Authority))
 	for i, v := range actual.JsonApiAttributes.Authority {
-		assert.Equal(t, expectedJson.Authority[i].Title, v.Title)
 		assert.Equal(t, expectedJson.Authority[i].Source, v.Source)
 		assert.Equal(t, expectedJson.Authority[i].Uri, v.Uri)
 	}
@@ -388,7 +375,6 @@ func Test_VerifyTaxonomySubject(t *testing.T) {
 	assert.Equal(t, len(expectedJson.Authority), len(actual.JsonApiAttributes.Authority))
 	assert.Equal(t, 2, len(actual.JsonApiAttributes.Authority))
 	for i, v := range actual.JsonApiAttributes.Authority {
-		assert.Equal(t, expectedJson.Authority[i].Title, v.Title)
 		assert.Equal(t, expectedJson.Authority[i].Source, v.Source)
 		assert.Equal(t, expectedJson.Authority[i].Uri, v.Uri)
 	}
@@ -425,7 +411,6 @@ func Test_VerifyTaxonomyTermLanguage(t *testing.T) {
 	assert.Equal(t, len(expectedJson.Authority), len(actual.JsonApiAttributes.Authority))
 	assert.Equal(t, 2, len(actual.JsonApiAttributes.Authority))
 	for i, v := range actual.JsonApiAttributes.Authority {
-		assert.Equal(t, expectedJson.Authority[i].Title, v.Title)
 		assert.Equal(t, expectedJson.Authority[i].Source, v.Source)
 		assert.Equal(t, expectedJson.Authority[i].Uri, v.Uri)
 	}
@@ -463,20 +448,15 @@ func Test_VerifyTaxonomyTermCorporateBody(t *testing.T) {
 	assert.Equal(t, len(expectedJson.Authority), len(actual.JsonApiAttributes.Authority))
 	assert.Equal(t, 2, len(actual.JsonApiAttributes.Authority))
 	for i, v := range actual.JsonApiAttributes.Authority {
-		assert.Equal(t, expectedJson.Authority[i].Title, v.Title)
 		assert.Equal(t, expectedJson.Authority[i].Source, v.Source)
 		assert.Equal(t, expectedJson.Authority[i].Uri, v.Uri)
 	}
-	assert.Equal(t, expectedJson.DateOfMeeting, actual.JsonApiAttributes.DateOfMeeting)
-	assert.Equal(t, expectedJson.Location, actual.JsonApiAttributes.Location)
-	assert.Equal(t, expectedJson.NumberOrSection, actual.JsonApiAttributes.NumberOrSection)
 	assert.Equal(t, expectedJson.PrimaryName, actual.JsonApiAttributes.PrimaryName)
-	assert.Equal(t, expectedJson.SubordinateName, actual.JsonApiAttributes.SubordinateName)
-	assert.Equal(t, expectedJson.AltDate, actual.JsonApiAttributes.AltDate)
-	assert.Equal(t, expectedJson.AltLocation, actual.JsonApiAttributes.AltLocation)
-	assert.Equal(t, expectedJson.AltNumberOrSection, actual.JsonApiAttributes.AltNumberOrSection)
-	assert.Equal(t, expectedJson.AltPrimaryName, actual.JsonApiAttributes.AltPrimaryName)
-	assert.Equal(t, expectedJson.AltSubordinateName, actual.JsonApiAttributes.AltSubordinateName)
+	assert.ElementsMatch(t, expectedJson.DateOfMeeting, actual.JsonApiAttributes.DateOfMeeting)
+	assert.ElementsMatch(t, expectedJson.Location, actual.JsonApiAttributes.Location)
+	assert.ElementsMatch(t, expectedJson.NumberOrSection, actual.JsonApiAttributes.NumberOrSection)
+	assert.ElementsMatch(t, expectedJson.SubordinateName, actual.JsonApiAttributes.SubordinateName)
+	assert.ElementsMatch(t, expectedJson.AltName, actual.JsonApiAttributes.AltName)
 	assert.ElementsMatch(t, expectedJson.Date, actual.JsonApiAttributes.Date)
 
 	// resolve and verify relationships
