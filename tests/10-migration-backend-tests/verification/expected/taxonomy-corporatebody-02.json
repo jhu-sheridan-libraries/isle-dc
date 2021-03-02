@@ -21,7 +21,8 @@
   ],
   "primary_name": "My Corporate Body",
   "subordinate_name": [
-      "My Corporate Body Subordinate Name"
+      "My Corporate Body Subordinate Name",
+      "Another Subordinate Name"
   ],
   "corporate_body_alternate_name": [
       "Alt name of meeting", 
