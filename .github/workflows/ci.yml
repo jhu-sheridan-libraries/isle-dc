@@ -30,6 +30,17 @@ jobs:
               if: contains('refs/heads/main refs/heads/development', github.ref)
               run: echo "It's main or development"
 
+            - name: Testing contains string 2
+              if: contains('refs/heads/main 
+                            refs/heads/development', github.ref)
+              run: echo "It's main or development"
+
+            - name: Testing contains string 3
+              if: contains('refs/heads/main 
+                            refs/heads/development', github.ref) &&
+                   ${{ env.DOCKER_USER != null }}
+              run: echo "It's main or development"            
+
             - name: Stop
               run: exit 1
 
