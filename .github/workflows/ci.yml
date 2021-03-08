@@ -38,8 +38,18 @@ jobs:
             - name: Testing contains string 3
               if: contains('refs/heads/main 
                             refs/heads/development', github.ref) &&
-                   ${{ env.DOCKER_USER != null }}
-              run: echo "It's main or development"            
+                   env.DOCKER_USER != null
+              run: echo "It's main or development, and docker user is not null"
+
+            - name: Testing conjunction 1
+              if: contains(github.ref, 'refs/pull') && 
+                    env.DOCKER_USER != null
+              run: echo "It's a pull request, and docker user is not null"  
+
+            - name: Testing conjunction 2
+              if: contains(github.ref, 'refs/pull') && 
+                    env.DOCKER_USER == null
+              run: echo "It's a pull request, and docker user is null"              
 
             - name: Stop
               run: exit 1
