@@ -16,6 +16,7 @@ jobs:
         timeout-minutes: 30
         env:
           DOCKER_USER: ${{secrets.DOCKER_USER}}
+          GITHUB_REF: ${{github.ref}}
         steps:
             # Check out current commit
             - name: Checkout
@@ -62,6 +63,6 @@ jobs:
             # Push docker images
             - name: Docker Push
               if: |
-                ${{ env.DOCKER_USER != null }} &&
-                contains(['refs/heads/development', 'refs/heads/main'], github.ref)
-              run: docker-compose push drupal
+                contains(['refs/heads/development', 'refs/heads/main'], github.ref) &&
+                ${{ env.DOCKER_USER != null }}
+              run: echo "Github ref ${GITHUB_REF}" && docker-compose push drupal
