@@ -1,5 +1,13 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+      - development
+  pull_request:
+    branches:
+      - main
+      - development
 
 jobs:
     everything:
@@ -53,5 +61,9 @@ jobs:
             
             # Push docker images
             - name: Docker Push
-              if:  ${{ env.DOCKER_USER != null }}
+              if: |
+                ${{ env.DOCKER_USER != null }} &&
+                contains('refs/heads/development
+                          refs/heads/main
+                ', github.ref)
               run: docker-compose push drupal
