@@ -63,7 +63,5 @@ jobs:
             - name: Docker Push
               if: |
                 ${{ env.DOCKER_USER != null }} &&
-                contains('refs/heads/development
-                          refs/heads/main
-                ', github.ref)
+                contains(['refs/heads/development', 'refs/heads/main'], github.ref)
               run: docker-compose push drupal
