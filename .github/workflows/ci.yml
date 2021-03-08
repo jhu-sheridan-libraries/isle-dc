@@ -30,10 +30,6 @@ jobs:
               if: contains('refs/heads/main refs/heads/development', github.ref)
               run: echo "It's main or development"
 
-            - name: Testing contains list
-              if: contains(['refs/heads/development', 'refs/heads/main'], github.ref)
-              run: echo "It's main or development"
-
             - name: Stop
               run: exit 1
 
