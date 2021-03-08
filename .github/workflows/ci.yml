@@ -23,7 +23,7 @@ jobs:
 
             # Debugging
             - name: Testing contains pull
-              if: contains(github.ref, "refs/pull")
+              if: contains(github.ref, 'refs/pull')
               run: echo "It's a pull request"
 
             - name: Testing contains string
