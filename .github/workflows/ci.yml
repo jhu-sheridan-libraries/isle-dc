@@ -16,11 +16,14 @@ jobs:
         timeout-minutes: 30
         env:
           DOCKER_USER: ${{secrets.DOCKER_USER}}
-          GITHUB_REF: ${{github.ref}}
         steps:
             # Check out current commit
             - name: Checkout
               uses: actions/checkout@v2
+
+            # Debugging
+            - name: Testing
+              run: echo ${{github.ref}}
 
             # Make sure buildkit is enabled
             - name: Enable buildkit
@@ -62,7 +65,6 @@ jobs:
             
             # Push docker images
             - name: Docker Push
-              if: |
-                contains(['refs/heads/development', 'refs/heads/main'], github.ref) &&
+              if: contains(['refs/heads/development', 'refs/heads/main'], github.ref) &&
                 ${{ env.DOCKER_USER != null }}
-              run: echo "Github ref ${GITHUB_REF}" && docker-compose push drupal
+              run: docker-compose push drupal
