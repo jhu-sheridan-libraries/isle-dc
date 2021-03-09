@@ -1,0 +1,24 @@
+uuid: 09ebab33-9519-475e-9b30-d031a3de708c
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: node.field_access_control
+field_name: field_access_control
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

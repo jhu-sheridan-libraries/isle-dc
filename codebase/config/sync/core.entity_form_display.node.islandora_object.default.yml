@@ -63,6 +63,7 @@ third_party_settings:
         - field_member_of
         - field_access_terms
         - field_display_hints
+        - field_access_terms
         - field_weight
       parent_name: ''
       weight: 6
