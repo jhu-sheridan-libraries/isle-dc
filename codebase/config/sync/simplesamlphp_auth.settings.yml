@@ -16,6 +16,8 @@ allow:
   default_login: true
   default_login_roles:
     administrator: administrator
+    collection_level_admin: collection_level_admin
+    global_admin: global_admin
   default_login_users: '1'
 logout_goto_url: ''
 user_register_original: visitors_admin_approval

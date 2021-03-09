@@ -1,4 +1,4 @@
-uuid: 20f6e0ac-0bf1-442f-89c4-6bac50c26bc5
+uuid: 09ebab33-9519-475e-9b30-d031a3de708c
 langcode: en
 status: true
 dependencies:
@@ -9,17 +9,15 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: custom
-_core:
-  default_config_hash: yf5ONBhEFtk6wecSjGIXs8lk_eatTCLSPPVBBG6pk4o
-id: node.field_access_terms
-field_name: field_access_terms
+id: node.field_access_control
+field_name: field_access_control
 entity_type: node
 type: entity_reference
 settings:
   target_type: taxonomy_term
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

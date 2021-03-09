@@ -1,0 +1,29 @@
+uuid: 1f872323-83c3-47c7-a7a9-798cd1ec1729
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_access_control
+    - node.type.collection_object
+    - taxonomy.vocabulary.islandora_access
+id: node.collection_object.field_access_control
+field_name: field_access_control
+entity_type: node
+bundle: collection_object
+label: 'Access Control'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      islandora_access: islandora_access
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

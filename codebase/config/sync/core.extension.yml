@@ -101,6 +101,8 @@ module:
   rest: 0
   rest_oai_pmh: 0
   restui: 0
+  role_delegation: 0
+  role_hierarchy: 0
   search_api: 0
   search_api_solr: 0
   search_api_solr_defaults: 0
@@ -119,6 +121,8 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  workbench: 0
+  workbench_access: 0
   content_translation: 10
   externalauth: 10
   views: 10

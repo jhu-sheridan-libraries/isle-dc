@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.collection_object.field_access_control
     - field.field.node.collection_object.field_alternative_title
     - field.field.node.collection_object.field_citable_url
     - field.field.node.collection_object.field_collection_contact_email
@@ -28,6 +29,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_access_control:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_alternative_title:
     weight: 3
     settings:
