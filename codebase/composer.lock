@@ -6502,18 +6502,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhu-idc/idc-ui-theme.git",
-                "reference": "25615b020baf5b60fb21859c67d296106527f773"
+                "reference": "52290047cbdb0286fcb37b9f734bc3e95938950d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhu-idc/idc-ui-theme/zipball/25615b020baf5b60fb21859c67d296106527f773",
-                "reference": "25615b020baf5b60fb21859c67d296106527f773",
+                "url": "https://api.github.com/repos/jhu-idc/idc-ui-theme/zipball/52290047cbdb0286fcb37b9f734bc3e95938950d",
+                "reference": "52290047cbdb0286fcb37b9f734bc3e95938950d",
                 "shasum": ""
             },
             "type": "drupal-theme",
-            "notification-url": "https://packagist.org/downloads/",
             "description": "Moo",
-            "time": "2021-02-12T19:31:20+00:00"
+            "support": {
+                "source": "https://github.com/jhu-idc/idc-ui-theme/tree/develop",
+                "issues": "https://github.com/jhu-idc/idc-ui-theme/issues"
+            },
+            "time": "2021-03-16T13:41:53+00:00"
         },
         {
             "name": "jhu-idc/idc_ui_module",
@@ -6521,12 +6524,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhu-idc/idc_ui_module.git",
-                "reference": "9223da740f68fcb4f237ac8376ef6b3f059f12b4"
+                "reference": "e7926325a58541f0d0a306a5891886f924ca8246"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhu-idc/idc_ui_module/zipball/9223da740f68fcb4f237ac8376ef6b3f059f12b4",
-                "reference": "9223da740f68fcb4f237ac8376ef6b3f059f12b4",
+                "url": "https://api.github.com/repos/jhu-idc/idc_ui_module/zipball/e7926325a58541f0d0a306a5891886f924ca8246",
+                "reference": "e7926325a58541f0d0a306a5891886f924ca8246",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -6535,7 +6538,7 @@
                 "source": "https://github.com/jhu-idc/idc_ui_module/tree/main",
                 "issues": "https://github.com/jhu-idc/idc_ui_module/issues"
             },
-            "time": "2021-02-16T16:13:15+00:00"
+            "time": "2021-03-10T17:09:19+00:00"
         },
         {
             "name": "jhu-idc/islandora_defaults",
