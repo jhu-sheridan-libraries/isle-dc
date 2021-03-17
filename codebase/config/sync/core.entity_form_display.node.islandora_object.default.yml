@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.islandora_object.field_abstract
+    - field.field.node.islandora_object.field_access_control
     - field.field.node.islandora_object.field_access_rights
-    - field.field.node.islandora_object.field_access_terms
     - field.field.node.islandora_object.field_alternative_title
     - field.field.node.islandora_object.field_citable_url
     - field.field.node.islandora_object.field_collection_number
@@ -63,7 +63,6 @@ third_party_settings:
         - field_member_of
         - field_access_terms
         - field_display_hints
-        - field_access_terms
         - field_weight
       parent_name: ''
       weight: 6
@@ -226,6 +225,16 @@ content:
       placeholder_value: ''
     third_party_settings: {  }
     type: reference_value_select
+    region: content
+  field_access_control:
+    weight: 69
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_access_rights:
     weight: 59
@@ -477,7 +486,7 @@ content:
     type: link_default
     region: content
   field_member_of:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 9
     region: content
     settings:

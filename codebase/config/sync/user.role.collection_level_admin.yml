@@ -88,7 +88,6 @@ permissions:
   - 'view all media revisions'
   - 'view checksums'
   - 'view collection_object revisions'
-  - 'view field_access_control'
   - 'view field_access_terms'
   - 'view islandora_object revisions'
   - 'view own field_access_control'

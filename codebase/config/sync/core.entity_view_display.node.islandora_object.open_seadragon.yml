@@ -5,8 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.open_seadragon
     - field.field.node.islandora_object.field_abstract
+    - field.field.node.islandora_object.field_access_control
     - field.field.node.islandora_object.field_access_rights
-    - field.field.node.islandora_object.field_access_terms
     - field.field.node.islandora_object.field_alternative_title
     - field.field.node.islandora_object.field_citable_url
     - field.field.node.islandora_object.field_collection_number

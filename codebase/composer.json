@@ -55,6 +55,7 @@
         "drupal/admin_toolbar": "^2.0",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/captcha": "^1.1",
+        "drupal/conditional_fields": "^1.0@alpha",
         "drupal/console": "~1.0",
         "drupal/contact_ajax": "^1.5",
         "drupal/contact_block": "^1.5",

@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.islandora_object.field_abstract
+    - field.field.node.islandora_object.field_access_control
     - field.field.node.islandora_object.field_access_rights
-    - field.field.node.islandora_object.field_access_terms
     - field.field.node.islandora_object.field_alternative_title
     - field.field.node.islandora_object.field_citable_url
     - field.field.node.islandora_object.field_collection_number
@@ -75,6 +75,14 @@ content:
       invalid_reference_label: ''
     third_party_settings: {  }
     type: reference_value_formatter
+    region: content
+  field_access_control:
+    weight: 42
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_access_rights:
     weight: 15
