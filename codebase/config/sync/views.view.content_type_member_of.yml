@@ -1,14 +1,12 @@
-uuid: aacd4289-a518-47bd-b864-566f74310187
+uuid: 597dff21-e9e8-459a-a058-60422b46723b
 langcode: en
 status: true
 dependencies:
-  config:
-    - node.type.collection_object
   module:
     - node
     - user
-id: repository_item_member_of
-label: 'Repository Item member_of'
+id: content_type_member_of
+label: 'Content Type member_of'
 module: views
 description: ''
 tag: ''
@@ -24,7 +22,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access content'
+          perm: 'edit any collection_object content'
       cache:
         type: tag
         options: {  }
@@ -140,44 +138,54 @@ display:
             operator_limit_selection: false
             operator_list: {  }
           group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          value:
-            collection_object: collection_object
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
       sorts:
-        title:
-          id: title
+        created:
+          id: created
           table: node_field_data
-          field: title
-          order: ASC
+          field: created
+          order: DESC
           entity_type: node
-          entity_field: title
-          plugin_id: standard
+          entity_field: created
+          plugin_id: date
           relationship: none
           group_type: group
           admin_label: ''
           exposed: false
           expose:
             label: ''
+          granularity: second
       header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  entity_reference_1:
+    display_plugin: entity_reference
+    id: entity_reference_1
+    display_title: 'Entity Reference'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      style:
+        type: entity_reference
+        options:
+          search_fields:
+            title: title
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

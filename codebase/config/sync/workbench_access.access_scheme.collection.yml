@@ -11,11 +11,11 @@ dependencies:
     - field.field.media.remote_video.field_access_terms
     - field.field.media.video.field_access_terms
     - field.field.node.collection_object.field_access_control
-    - field.field.node.islandora_object.field_access_terms
+    - field.field.node.islandora_object.field_access_control
     - taxonomy.vocabulary.islandora_access
 id: collection
-label: Collection
-plural_label: Collections
+label: Communities
+plural_label: Communities
 scheme: taxonomy
 scheme_settings:
   vocabularies:
@@ -51,9 +51,9 @@ scheme_settings:
       field: field_access_terms
     -
       entity_type: node
-      bundle: islandora_object
-      field: field_access_terms
+      bundle: collection_object
+      field: field_access_control
     -
       entity_type: node
-      bundle: collection_object
+      bundle: islandora_object
       field: field_access_control

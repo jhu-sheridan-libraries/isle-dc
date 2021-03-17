@@ -11,11 +11,10 @@ dependencies:
     - content_translation
     - search_api
   config:
+    - field.storage.node.body
     - field.storage.node.field_abstract
-    - field.storage.node.field_access_terms
     - field.storage.node.field_access_rights
     - field.storage.node.field_alternative_title
-    - field.storage.node.body
     - field.storage.node.field_citable_url
     - field.storage.node.field_collection_contact_name
     - field.storage.node.field_collection_number
@@ -35,6 +34,7 @@ dependencies:
     - field.storage.node.field_featured_item
     - field.storage.node.field_finding_aid
     - field.storage.node.field_genre
+    - field.storage.taxonomy_term.field_geo_alt_name
     - field.storage.node.field_geoportal_link
     - field.storage.node.field_image
     - field.storage.node.field_is_part_of
@@ -54,7 +54,6 @@ dependencies:
     - field.storage.node.field_table_of_contents
     - field.storage.node.field_tags
     - field.storage.node.field_years
-    - field.storage.taxonomy_term.field_geo_alt_name
     - search_api.server.default_solr_server
     - core.entity_view_mode.node.search_index
 third_party_settings:
@@ -185,14 +184,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_access_rights
-  field_access_terms:
-    label: 'Access Control'
-    datasource_id: 'entity:node'
-    property_path: field_access_terms
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_access_terms
   field_alternative_title:
     label: 'Alternative Title'
     datasource_id: 'entity:node'

@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.islandora_object.field_abstract
+    - field.field.node.islandora_object.field_access_control
     - field.field.node.islandora_object.field_access_rights
-    - field.field.node.islandora_object.field_access_terms
     - field.field.node.islandora_object.field_alternative_title
     - field.field.node.islandora_object.field_citable_url
     - field.field.node.islandora_object.field_collection_number
@@ -63,7 +63,6 @@ third_party_settings:
         - field_member_of
         - langcode
         - field_display_hints
-        - field_access_terms
         - field_weight
       parent_name: ''
       weight: 6
@@ -227,18 +226,22 @@ content:
     third_party_settings: {  }
     type: reference_value_select
     region: content
+  field_access_control:
+    weight: 69
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_access_rights:
     weight: 59
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
-  field_access_terms:
-    type: options_select
-    weight: 12
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_alternative_title:
     weight: 15
     settings:
@@ -477,15 +480,30 @@ content:
     type: link_default
     region: content
   field_member_of:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 9
     region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
-    third_party_settings: {  }
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        4f370f9a-983c-415f-9f05-684f9a7369fb:
+          dependee: field_access_terms
+          settings:
+            state: '!empty'
+            condition: '!empty'
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form: {  }
+            effect: fill
+            effect_options:
+              fill:
+                value: ''
+                reset: 1
+            selector: '%val'
+          entity_type: node
+          bundle: islandora_object
   field_model:
     type: options_select
     weight: 8

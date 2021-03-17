@@ -64,7 +64,7 @@ content:
     type: link
     region: content
   field_collection_contact_email:
-    weight: 9
+    weight: 17
     label: above
     settings: {  }
     third_party_settings: {  }
