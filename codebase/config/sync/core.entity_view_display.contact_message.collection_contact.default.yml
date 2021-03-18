@@ -11,7 +11,7 @@ bundle: collection_contact
 mode: default
 content:
   field_collection:
-    weight: 1
+    weight: 0
     label: above
     settings:
       link: true
@@ -19,22 +19,21 @@ content:
     type: entity_reference_label
     region: content
   mail:
-    weight: -2
+    weight: 2
     region: content
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
   message:
-    type: string
-    weight: 0
+    type: basic_string
+    weight: 4
     label: above
     region: content
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
   name:
-    weight: -3
+    weight: 1
     region: content
     label: above
     settings:
@@ -42,7 +41,7 @@ content:
     third_party_settings: {  }
     type: string
   subject:
-    weight: -1
+    weight: 3
     region: content
     label: above
     settings:

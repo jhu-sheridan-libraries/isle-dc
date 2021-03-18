@@ -11,12 +11,12 @@ bundle: collection_contact
 mode: default
 content:
   copy:
-    weight: 50
+    weight: 6
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   field_collection:
-    weight: 51
+    weight: 0
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -27,40 +27,36 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 5
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   mail:
-    weight: -40
+    weight: 2
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   message:
     type: string_textarea
-    weight: 0
+    weight: 4
     settings:
       rows: 12
       placeholder: ''
     region: content
     third_party_settings: {  }
   name:
-    weight: -50
+    weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
-  preview:
-    weight: 50
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   subject:
     type: string_textfield
-    weight: -10
+    weight: 3
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  preview: true
