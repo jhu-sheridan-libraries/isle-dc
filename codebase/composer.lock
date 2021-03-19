@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a5597a86fe805d1c19b7ee550d554876",
+    "content-hash": "ddec2ca9e1b9f3e133e1e8245344f175",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2640,6 +2640,50 @@
             ],
             "description": "Drupal Console Extend Plugin",
             "time": "2019-11-07T20:15:27+00:00"
+        },
+        {
+            "name": "drupal/contact_ajax",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/contact_ajax.git",
+                "reference": "8.x-1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/contact_ajax-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "c49d61dcb9a80edaa3e241be4bf63486e6b4563a"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.5",
+                    "datestamp": "1607179793",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ziomizar",
+                    "homepage": "https://www.drupal.org/user/814348"
+                }
+            ],
+            "description": "Submit contact form using ajax.",
+            "homepage": "https://www.drupal.org/project/contact_ajax",
+            "support": {
+                "source": "https://git.drupalcode.org/project/contact_ajax"
+            }
         },
         {
             "name": "drupal/contact_block",
@@ -6713,12 +6757,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhu-idc/idc-ui-theme.git",
-                "reference": "b5377ff794e299e0ed6b6cb0bda8b112d495d9d6"
+                "reference": "41e1941bd5098619bdbb25bb373fdbd2c12614ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhu-idc/idc-ui-theme/zipball/b5377ff794e299e0ed6b6cb0bda8b112d495d9d6",
-                "reference": "b5377ff794e299e0ed6b6cb0bda8b112d495d9d6",
+                "url": "https://api.github.com/repos/jhu-idc/idc-ui-theme/zipball/41e1941bd5098619bdbb25bb373fdbd2c12614ce",
+                "reference": "41e1941bd5098619bdbb25bb373fdbd2c12614ce",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -6727,7 +6771,7 @@
                 "source": "https://github.com/jhu-idc/idc-ui-theme/tree/develop",
                 "issues": "https://github.com/jhu-idc/idc-ui-theme/issues"
             },
-            "time": "2021-03-17T20:28:47+00:00"
+            "time": "2021-03-19T15:06:12+00:00"
         },
         {
             "name": "jhu-idc/idc_ui_module",
@@ -6735,12 +6779,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhu-idc/idc_ui_module.git",
-                "reference": "e7926325a58541f0d0a306a5891886f924ca8246"
+                "reference": "fbc2186d646acb7686a9d2ab596deb97cb8e2e97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhu-idc/idc_ui_module/zipball/e7926325a58541f0d0a306a5891886f924ca8246",
-                "reference": "e7926325a58541f0d0a306a5891886f924ca8246",
+                "url": "https://api.github.com/repos/jhu-idc/idc_ui_module/zipball/fbc2186d646acb7686a9d2ab596deb97cb8e2e97",
+                "reference": "fbc2186d646acb7686a9d2ab596deb97cb8e2e97",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -6749,7 +6793,7 @@
                 "source": "https://github.com/jhu-idc/idc_ui_module/tree/main",
                 "issues": "https://github.com/jhu-idc/idc_ui_module/issues"
             },
-            "time": "2021-03-10T17:09:19+00:00"
+            "time": "2021-03-19T15:06:02+00:00"
         },
         {
             "name": "jhu-idc/islandora_defaults",

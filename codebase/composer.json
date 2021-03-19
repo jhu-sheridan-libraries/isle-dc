@@ -47,6 +47,7 @@
         "drupal/admin_toolbar": "^2.0",
         "drupal/captcha": "^1.1",
         "drupal/console": "~1.0",
+        "drupal/contact_ajax": "^1.5",
         "drupal/contact_block": "^1.5",
         "drupal/contact_emails": "^1.19",
         "drupal/contact_storage": "^1.1",
