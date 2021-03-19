@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - contact_ajax
     - contact_storage
 third_party_settings:
   contact_storage:
@@ -11,6 +12,12 @@ third_party_settings:
     disabled_form_message: 'This contact form has been disabled.'
     maximum_submissions_user: 0
     page_autoreply_format: plain_text
+  contact_ajax:
+    enabled: true
+    prefix_id: ''
+    render_selector: ''
+    confirmation_type: 4
+    load_clean_form: null
 id: collection_contact
 label: 'Collection Contact'
 recipients:
