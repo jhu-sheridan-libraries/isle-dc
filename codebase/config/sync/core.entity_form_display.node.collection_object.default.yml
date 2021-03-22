@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.collection_object.field_featured_item
     - field.field.node.collection_object.field_finding_aid
     - field.field.node.collection_object.field_member_of
+    - field.field.node.collection_object.field_model
     - field.field.node.collection_object.field_title_language
     - node.type.collection_object
   module:
@@ -25,12 +26,12 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   field_access_control:
-    weight: 14
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -102,9 +103,23 @@ content:
     region: content
   field_member_of:
     weight: 10
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
+    region: content
+  field_model:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_title_language:
     weight: 1
@@ -116,7 +131,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 14
     region: content
     third_party_settings: {  }
   title:
@@ -129,7 +144,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 12
     settings:
       match_operator: CONTAINS
       size: 60
