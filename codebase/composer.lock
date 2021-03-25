@@ -1770,6 +1770,20 @@
                 "sqlserver",
                 "sqlsrv"
             ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdbal",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-11-14T20:26:58+00:00"
         },
         {
@@ -4696,7 +4710,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -7083,12 +7097,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhu-idc/islandora_defaults.git",
-                "reference": "e6a1083a7d7ea821dad45043fe1863127538d5af"
+                "reference": "4fbbc2d2f2d09aa9aebec1ecbd3bb5a5c1a7103d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhu-idc/islandora_defaults/zipball/e6a1083a7d7ea821dad45043fe1863127538d5af",
-                "reference": "e6a1083a7d7ea821dad45043fe1863127538d5af",
+                "url": "https://api.github.com/repos/jhu-idc/islandora_defaults/zipball/4fbbc2d2f2d09aa9aebec1ecbd3bb5a5c1a7103d",
+                "reference": "4fbbc2d2f2d09aa9aebec1ecbd3bb5a5c1a7103d",
                 "shasum": ""
             },
             "require": {
@@ -7114,7 +7128,7 @@
                 "issues": "https://github.com/jhu-idc/islandora_defaults/issues",
                 "source": "https://github.com/jhu-idc/islandora_defaults/tree/8.x-1.x"
             },
-            "time": "2021-03-17T14:28:23+00:00"
+            "time": "2021-03-24T20:22:40+00:00"
         },
         {
             "name": "jhu-idc/migrate_file",
@@ -7738,6 +7752,12 @@
                 "sftp",
                 "storage"
             ],
+            "funding": [
+                {
+                    "url": "https://offset.earth/frankdejonge",
+                    "type": "other"
+                }
+            ],
             "time": "2020-08-23T07:39:11+00:00"
         },
         {
@@ -8128,6 +8148,16 @@
                 "log",
                 "logging",
                 "psr-3"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/Seldaek",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/monolog/monolog",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-12-14T12:56:38+00:00"
         },
@@ -11185,6 +11215,16 @@
                 "rabbitmq",
                 "stomp"
             ],
+            "funding": [
+                {
+                    "url": "https://github.com/jmglsn",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/staabm",
+                    "type": "github"
+                }
+            ],
             "time": "2020-06-15T18:01:49+00:00"
         },
         {
@@ -11752,6 +11792,20 @@
             ],
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-09-07T11:33:47+00:00"
         },
         {
@@ -13273,6 +13327,20 @@
             ],
             "description": "Symfony Security Component",
             "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-10-28T05:23:51+00:00"
         },
         {

@@ -61,7 +61,7 @@ third_party_settings:
       children:
         - field_model
         - field_member_of
-        - langcode
+        - field_access_control
         - field_display_hints
         - field_weight
       parent_name: ''
@@ -227,7 +227,7 @@ content:
     type: reference_value_select
     region: content
   field_access_control:
-    weight: 69
+    weight: 10
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -580,7 +580,7 @@ content:
     type: options_select
     region: content
   field_weight:
-    weight: 13
+    weight: 12
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -595,13 +595,6 @@ content:
     third_party_settings: {  }
     type: edtf_default
     region: content
-  langcode:
-    type: language_select
-    weight: 10
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
@@ -628,6 +621,7 @@ content:
       match_limit: 10
     third_party_settings: {  }
 hidden:
+  langcode: true
   path: true
   promote: true
   sticky: true

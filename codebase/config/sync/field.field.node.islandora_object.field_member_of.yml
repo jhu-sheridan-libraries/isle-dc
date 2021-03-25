@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_member_of
+    - node.type.collection_object
     - node.type.islandora_object
   enforced:
     module:
@@ -21,10 +22,14 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: views
+  handler: 'default:node'
   handler_settings:
-    view:
-      view_name: content_type_member_of
-      display_name: entity_reference_1
-      arguments: {  }
+    target_bundles:
+      collection_object: collection_object
+      islandora_object: islandora_object
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: collection_object
 field_type: entity_reference
