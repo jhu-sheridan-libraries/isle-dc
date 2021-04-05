@@ -249,6 +249,17 @@ test('Perform Genre Taxonomy Migration', async t => {
 test('Perform Repository Object Migration', async t => {
   // Migrate dependencies first
 
+  // access terms
+  await t
+    .click(selectMigration)
+    .click(migrationOptions.withAttribute('value', migrate_islandora_accessterms_taxonomy));
+
+  await t
+    .setFilesToUpload('#edit-source-file', [
+      './migrations/islandora_object-accessterms.csv'
+    ])
+    .click('#edit-import');
+
   // persons
   await t
     .click(selectMigration)

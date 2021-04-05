@@ -230,6 +230,42 @@ func verifyTaxonomyTermIslandoraAccessTerms(t *testing.T, fileName string) {
 	}
 }
 
+func Test_VerifyTaxonomyCopyrightAndUse(t *testing.T) {
+	expectedJson := ExpectedCopyrightAndUse{}
+	unmarshalJson(t, "taxonomy-copyrightanduse.json", &expectedJson)
+
+	// sanity check the expected json
+	assert.Equal(t, "taxonomy_term", expectedJson.Type)
+	assert.Equal(t, "copyright_and_use", expectedJson.Bundle)
+
+	u := &JsonApiUrl{
+		t:            t,
+		baseUrl:      DrupalBaseurl,
+		drupalEntity: expectedJson.Type,
+		drupalBundle: expectedJson.Bundle,
+		filter:       "name",
+		value:        expectedJson.Name,
+	}
+
+	// retrieve json of the migrated entity from the jsonapi and unmarshal the single response
+	copyrightRes := &JsonApiCopyrightAndUse{}
+	u.get(copyrightRes)
+
+	actual := copyrightRes.JsonApiData[0]
+	assert.Equal(t, expectedJson.Type, actual.Type.entity())
+	assert.Equal(t, expectedJson.Bundle, actual.Type.bundle())
+	assert.Equal(t, expectedJson.Name, actual.JsonApiAttributes.Name)
+	assert.Equal(t, expectedJson.Description.Format, actual.JsonApiAttributes.Description.Format)
+	assert.Equal(t, expectedJson.Description.Value, actual.JsonApiAttributes.Description.Value)
+	assert.Equal(t, expectedJson.Description.Processed, actual.JsonApiAttributes.Description.Processed)
+	assert.Equal(t, len(expectedJson.Authority), len(actual.JsonApiAttributes.Authority))
+	assert.Equal(t, 2, len(actual.JsonApiAttributes.Authority))
+	for i, v := range actual.JsonApiAttributes.Authority {
+		assert.Equal(t, expectedJson.Authority[i].Source, v.Source)
+		assert.Equal(t, expectedJson.Authority[i].Uri, v.Uri)
+	}
+}
+
 func Test_VerifyTaxonomyTermResourceType(t *testing.T) {
 	expectedJson := ExpectedResourceType{}
 	unmarshalJson(t, "taxonomy-resourcetypes.json", &expectedJson)
@@ -252,42 +288,6 @@ func Test_VerifyTaxonomyTermResourceType(t *testing.T) {
 	u.get(res)
 
 	actual := res.JsonApiData[0]
-	assert.Equal(t, expectedJson.Type, actual.Type.entity())
-	assert.Equal(t, expectedJson.Bundle, actual.Type.bundle())
-	assert.Equal(t, expectedJson.Name, actual.JsonApiAttributes.Name)
-	assert.Equal(t, expectedJson.Description.Format, actual.JsonApiAttributes.Description.Format)
-	assert.Equal(t, expectedJson.Description.Value, actual.JsonApiAttributes.Description.Value)
-	assert.Equal(t, expectedJson.Description.Processed, actual.JsonApiAttributes.Description.Processed)
-	assert.Equal(t, len(expectedJson.Authority), len(actual.JsonApiAttributes.Authority))
-	assert.Equal(t, 2, len(actual.JsonApiAttributes.Authority))
-	for i, v := range actual.JsonApiAttributes.Authority {
-		assert.Equal(t, expectedJson.Authority[i].Source, v.Source)
-		assert.Equal(t, expectedJson.Authority[i].Uri, v.Uri)
-	}
-}
-
-func Test_VerifyTaxonomyCopyrightAndUse(t *testing.T) {
-	expectedJson := ExpectedCopyrightAndUse{}
-	unmarshalJson(t, "taxonomy-copyrightanduse.json", &expectedJson)
-
-	// sanity check the expected json
-	assert.Equal(t, "taxonomy_term", expectedJson.Type)
-	assert.Equal(t, "copyright_and_use", expectedJson.Bundle)
-
-	u := &JsonApiUrl{
-		t:            t,
-		baseUrl:      DrupalBaseurl,
-		drupalEntity: expectedJson.Type,
-		drupalBundle: expectedJson.Bundle,
-		filter:       "name",
-		value:        expectedJson.Name,
-	}
-
-	// retrieve json of the migrated entity from the jsonapi and unmarshal the single response
-	copyrightRes := &JsonApiCopyrightAndUse{}
-	u.getSingle(copyrightRes)
-
-	actual := copyrightRes.JsonApiData[0]
 	assert.Equal(t, expectedJson.Type, actual.Type.entity())
 	assert.Equal(t, expectedJson.Bundle, actual.Type.bundle())
 	assert.Equal(t, expectedJson.Name, actual.JsonApiAttributes.Name)
@@ -621,9 +621,6 @@ func Test_VerifyCollection(t *testing.T) {
 	assert.ElementsMatch(t, expectedJson.CollectionNumber, actual.JsonApiAttributes.CollectionNumber)
 
 	relData := res.JsonApiData[0].JsonApiRelationships
-
-	strB, _ := json.Marshal(relData)
-	log.Println(string(strB))
 
 	// Resolve and verify title language
 	assert.NotNil(t, relData.TitleLanguage.Data)
