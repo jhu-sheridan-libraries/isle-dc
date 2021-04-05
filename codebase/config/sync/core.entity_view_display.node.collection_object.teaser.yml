@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.collection_object.field_access_control
+    - field.field.node.collection_object.field_access_terms
     - field.field.node.collection_object.field_alternative_title
     - field.field.node.collection_object.field_citable_url
     - field.field.node.collection_object.field_collection_contact_email
@@ -56,7 +56,7 @@ hidden:
   display_media_entity_view_1: true
   display_media_entity_view_2: true
   display_media_service_file: true
-  field_access_control: true
+  field_access_terms: true
   field_alternative_title: true
   field_collection_contact_email: true
   field_collection_contact_name: true

@@ -5,8 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.binary
     - field.field.node.islandora_object.field_abstract
-    - field.field.node.islandora_object.field_access_control
     - field.field.node.islandora_object.field_access_rights
+    - field.field.node.islandora_object.field_access_terms
     - field.field.node.islandora_object.field_alternative_title
     - field.field.node.islandora_object.field_citable_url
     - field.field.node.islandora_object.field_collection_number
@@ -138,8 +138,8 @@ hidden:
   display_media_service_file: true
   display_media_thumbnail: true
   field_abstract: true
-  field_access_control: true
   field_access_rights: true
+  field_access_terms: true
   field_alternative_title: true
   field_citable_url: true
   field_collection_number: true

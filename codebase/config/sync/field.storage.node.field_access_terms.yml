@@ -1,4 +1,4 @@
-uuid: 09ebab33-9519-475e-9b30-d031a3de708c
+uuid: 5adeb564-8f1d-486f-a890-9323e4c169da
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: custom
-id: node.field_access_control
-field_name: field_access_control
+id: node.field_access_terms
+field_name: field_access_terms
 entity_type: node
 type: entity_reference
 settings:

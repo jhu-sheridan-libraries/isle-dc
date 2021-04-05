@@ -33,6 +33,7 @@ module:
   embed: 0
   entity_browser: 0
   entity_embed: 0
+  entity_reference_unpublished: 0
   epp: 0
   eva: 0
   facets: 0

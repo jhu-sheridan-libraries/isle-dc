@@ -1,19 +1,25 @@
-uuid: 1f872323-83c3-47c7-a7a9-798cd1ec1729
+uuid: f8542ca6-17e6-4b23-abc0-4c92060a650b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_access_control
-    - node.type.collection_object
+    - field.storage.node.field_access_terms
+    - node.type.islandora_object
     - taxonomy.vocabulary.islandora_access
-id: node.collection_object.field_access_control
-field_name: field_access_control
+  module:
+    - epp
+third_party_settings:
+  epp:
+    value: ''
+    on_update: 0
+id: node.islandora_object.field_access_terms
+field_name: field_access_terms
 entity_type: node
-bundle: collection_object
-label: 'Access Control'
+bundle: islandora_object
+label: 'Access Terms'
 description: ''
-required: true
-translatable: false
+required: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.collection_object.field_access_control
+    - field.field.node.collection_object.field_access_terms
     - field.field.node.collection_object.field_alternative_title
     - field.field.node.collection_object.field_citable_url
     - field.field.node.collection_object.field_collection_contact_email
@@ -30,8 +30,8 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_access_control:
-    weight: 11
+  field_access_terms:
+    weight: 26
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -103,9 +103,13 @@ content:
     region: content
   field_member_of:
     weight: 10
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
     region: content
   field_model:
     weight: 15
