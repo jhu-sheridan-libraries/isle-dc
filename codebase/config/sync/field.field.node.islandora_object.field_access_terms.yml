@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_access_control
+    - field.storage.node.field_access_terms
     - node.type.islandora_object
     - taxonomy.vocabulary.islandora_access
   module:

@@ -622,6 +622,9 @@ func Test_VerifyCollection(t *testing.T) {
 
 	relData := res.JsonApiData[0].JsonApiRelationships
 
+	strB, _ := json.Marshal(relData)
+	log.Println(string(strB))
+
 	// Resolve and verify title language
 	assert.NotNil(t, relData.TitleLanguage.Data)
 	assert.Equal(t, "taxonomy_term", relData.TitleLanguage.Data.Type.entity())
