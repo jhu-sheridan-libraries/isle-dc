@@ -7042,12 +7042,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhu-idc/controlled_access_terms.git",
-                "reference": "bf962a8bbbe32ae6a1c27e9753ab9d4981042db9"
+                "reference": "7a03834409e91807cf1c94900a1749c1b582ae03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhu-idc/controlled_access_terms/zipball/bf962a8bbbe32ae6a1c27e9753ab9d4981042db9",
-                "reference": "bf962a8bbbe32ae6a1c27e9753ab9d4981042db9",
+                "url": "https://api.github.com/repos/jhu-idc/controlled_access_terms/zipball/7a03834409e91807cf1c94900a1749c1b582ae03",
+                "reference": "7a03834409e91807cf1c94900a1749c1b582ae03",
                 "shasum": ""
             },
             "require": {
@@ -7089,7 +7089,7 @@
                 "issues": "https://github.com/jhu-idc/controlled_access_terms/issues",
                 "source": "https://github.com/jhu-idc/controlled_access_terms/tree/8.x-1.x"
             },
-            "time": "2021-02-22T22:01:08+00:00"
+            "time": "2021-04-06T18:27:53+00:00"
         },
         {
             "name": "jhu-idc/idc-ui-theme",
@@ -7141,12 +7141,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhu-idc/islandora_defaults.git",
-                "reference": "4fbbc2d2f2d09aa9aebec1ecbd3bb5a5c1a7103d"
+                "reference": "ffbbe98f1202ad734ba9b0287221fe722e01c50f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhu-idc/islandora_defaults/zipball/4fbbc2d2f2d09aa9aebec1ecbd3bb5a5c1a7103d",
-                "reference": "4fbbc2d2f2d09aa9aebec1ecbd3bb5a5c1a7103d",
+                "url": "https://api.github.com/repos/jhu-idc/islandora_defaults/zipball/ffbbe98f1202ad734ba9b0287221fe722e01c50f",
+                "reference": "ffbbe98f1202ad734ba9b0287221fe722e01c50f",
                 "shasum": ""
             },
             "require": {
@@ -7172,7 +7172,7 @@
                 "issues": "https://github.com/jhu-idc/islandora_defaults/issues",
                 "source": "https://github.com/jhu-idc/islandora_defaults/tree/8.x-1.x"
             },
-            "time": "2021-03-24T20:22:40+00:00"
+            "time": "2021-04-06T18:04:35+00:00"
         },
         {
             "name": "jhu-idc/migrate_file",
