@@ -249,7 +249,7 @@ func Test_VerifyTaxonomyCopyrightAndUse(t *testing.T) {
 
 	// retrieve json of the migrated entity from the jsonapi and unmarshal the single response
 	copyrightRes := &JsonApiCopyrightAndUse{}
-	u.get(copyrightRes)
+	u.getSingle(copyrightRes)
 
 	actual := copyrightRes.JsonApiData[0]
 	assert.Equal(t, expectedJson.Type, actual.Type.entity())
@@ -285,7 +285,7 @@ func Test_VerifyTaxonomyTermResourceType(t *testing.T) {
 
 	// retrieve json of the migrated entity from the jsonapi and unmarshal the single response
 	res := &JsonApiResourceType{}
-	u.get(res)
+	u.getSingle(res)
 
 	actual := res.JsonApiData[0]
 	assert.Equal(t, expectedJson.Type, actual.Type.entity())
