@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	. "github.com/logrusorgru/aurora/v3"
+	"github.com/stretchr/testify/assert"
 	"io"
 	"io/ioutil"
 	"log"
@@ -13,9 +15,6 @@ import (
 	"path/filepath"
 	"strings"
 	"testing"
-
-	. "github.com/logrusorgru/aurora/v3"
-	"github.com/stretchr/testify/assert"
 )
 
 const (
