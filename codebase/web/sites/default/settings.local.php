@@ -29,6 +29,8 @@ $config['s3fs.settings']['hostname'] = getenv('DRUPAL_DEFAULT_S3_HOSTNAME');
 $config['s3fs.settings']['use_cname'] = (bool) getenv('DRUPAL_DEFAULT_S3_USE_CNAME') ?: false;
 $config['s3fs.settings']['use_customhost'] = (bool) getenv('DRUPAL_DEFAULT_S3_USE_CUSTOMHOST') ?: false;
 $config['s3fs.settings']['use_path_style_endpoint'] = (bool) getenv('DRUPAL_DEFAULT_S3_USE_PATH_STYLE_ENDPOINT') ?: false;
+$config['islandora_iiif.settings']['iiif_server'] = getenv('DRUPAL_DEFAULT_CANTALOUPE_URL');
+$config['openseadragon.settings']['iiif_server'] = getenv('DRUPAL_DEFAULT_CANTALOUPE_URL');
 
 # This will be overridden by s3fs, but needs a value in order to enable private FS at all. 
 $settings['file_private_path'] = '/tmp'; 
