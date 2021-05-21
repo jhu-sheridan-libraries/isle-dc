@@ -122,5 +122,5 @@ default_options:
   tileSize: 256
 _core:
   default_config_hash: e3vGYyreIdWCpI2ILIqc_JoZuzRL3bl9zjZvnMeuy7I
-iiif_server: 'https://islandora-idc.traefik.me/cantaloupe/iiif/2'
+iiif_server: 'env:DRUPAL_DEFAULT_CANTALOUPE_URL'
 manifest_view: iiif_manifest
