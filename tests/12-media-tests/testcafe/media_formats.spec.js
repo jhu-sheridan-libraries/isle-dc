@@ -192,6 +192,7 @@ test("Migrate TGZ File", async (t) => {
       await tryUntilTrue(async () => {
         const media = await findMediaOf(t, "Migrated TGZ Object");
         // the tgz and just a FITS deriv
+        console.log("tgz count: " + media.length);
         return media.length == 2;
       })
     )
