@@ -3,4 +3,4 @@ media_format_file_tests_01,Geo Tif file,NEFF1851_GEO.tfw,application/octet-strea
 media_format_file_tests_02,Test Zip File,file_test.zip,application/zip,media_format_object_07,Original File,http://migration-assets/assets/file/file_test.zip
 media_format_file_tests_03,Test Tar File,file_test.tar,application/x-tar,media_format_object_09,Original File,http://migration-assets/assets/file/file_test.tar
 media_format_file_tests_04,Test GZ File,file_test.tar.gz,application/gzip,media_format_object_11,Original File,http://migration-assets/assets/file/file_test.tar.gz
-media_format_file_tests_05,Test TGZ File,file_test.tgz,application/x-gtar,media_format_object_13,Original File,http://migration-assets/assets/file/file_test.tgz
+media_format_file_tests_05,Test TGZ File,file_test.tgz,application/gzip,media_format_object_13,Original File,http://migration-assets/assets/file/file_test.tgz
