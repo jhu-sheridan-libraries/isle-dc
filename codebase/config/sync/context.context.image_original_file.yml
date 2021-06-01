@@ -15,18 +15,25 @@ disabled: false
 conditions:
   media_has_term:
     id: media_has_term
-    negate: 0
+    negate: false
     uri: 'http://pcdm.org/use#OriginalFile'
     context_mapping:
       media: '@islandora.media_route_context_provider:media'
     logic: and
   parent_node_has_term:
     id: parent_node_has_term
-    negate: 0
+    negate: false
     uri: 'http://purl.org/coar/resource_type/c_c513'
     context_mapping:
       media: '@islandora.media_route_context_provider:media'
     logic: and
+  islandora_entity_bundle:
+    id: islandora_entity_bundle
+    bundles:
+      image: image
+    negate: 0
+    uuid: 90b37f8e-e498-42b9-bf2b-631eb16a74fa
+    context_mapping: {  }
 reactions:
   derivative:
     id: derivative
