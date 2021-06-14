@@ -41,4 +41,16 @@ test('Perform contact emails migration', async (t) => {
       .withText(`done with '${migrationId}'`)
       .exists
   ).ok('Found no messages about finishing this migration', { timeout: 10000 });
+
+  // Now check the admin page to make sure the entities are present
+  await t.navigateTo('/admin/structure/contact/emails');
+
+  const content = Selector('#block-seven-content table tbody tr');
+
+  await t.expect(content.withText('Collection Contact').exists)
+    .ok('Didn\'t find collection contact in table');
+  await t.expect(content.withText('Repository Item Contact').exists)
+    .ok('Did\'t find repo item contact in table');
+  await t.expect(content.withText('this is a moo').exists)
+    .ok('Couldn\'t find data from migration');
 });
