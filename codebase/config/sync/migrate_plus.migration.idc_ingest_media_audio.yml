@@ -95,4 +95,5 @@ process:
 destination:
   plugin: 'entity:media'
   default_bundle: audio
+  validate: true
 migration_dependencies: null
