@@ -715,6 +715,9 @@ type JsonApiMediaAttributes struct {
 }
 
 type JsonApiMediaRelationships struct {
+  AccessTerms struct {
+		Data []JsonApiData
+	} `json:"field_access_terms"`
 	MediaUse struct {
 		Data []JsonApiData
 	} `json:"field_media_use"`

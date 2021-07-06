@@ -483,21 +483,12 @@ process:
       process:
         uri: value
   field_member_of:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: member_of
-    -
-      plugin: explode
-      delimiter: '|'
-      strict: false
-    -
-      plugin: parse_entity_lookup
-      defaults:
-        entity_type: node
-        bundle_key: type
-        bundle: collection_object
-        value_key: title
+    plugin: parse_entity_lookup
+    defaults:
+      entity_type: node
+      bundle_key: type
+      bundle: collection_object
+      value_key: title
   field_model:
     plugin: entity_lookup
     bundle_key: vid

@@ -335,6 +335,7 @@ type ExpectedMediaGeneric struct {
 	OriginalName string `json:"original_name"`
 	Size         int
 	MimeType     string   `json:"mime_type"`
+	AccessTerms  []string `json:"access_terms"`
 	MediaUse     []string `json:"use"`
 	MediaOf      string   `json:"media_of"`
 	Uri          struct {
