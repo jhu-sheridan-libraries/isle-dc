@@ -693,25 +693,21 @@ func Test_VerifyCollection(t *testing.T) {
 
 	// Resolve and verify member_of values
 	assert.NotNil(t, relData.MemberOf)
-	assert.Equal(t, 1, len(relData.MemberOf.Data))
-	assert.Equal(t, len(expectedJson.MemberOf), len(relData.MemberOf.Data))
-	for i, memberOfData := range relData.MemberOf.Data {
-		assert.Equal(t, "node", memberOfData.Type.entity())
-		assert.Equal(t, "collection_object", memberOfData.Type.bundle())
+  assert.Equal(t, "node", relData.MemberOf.Data.Type.entity())
+  assert.Equal(t, "collection_object", relData.MemberOf.Data.Type.bundle())
 
-		u = &JsonApiUrl{
-			t:            t,
-			baseUrl:      DrupalBaseurl,
-			drupalEntity: memberOfData.Type.entity(),
-			drupalBundle: memberOfData.Type.bundle(),
-			filter:       "id",
-			value:        memberOfData.Id,
-		}
-		memberCol := JsonApiCollection{}
-		u.getSingle(&memberCol)
+  u = &JsonApiUrl{
+    t:            t,
+    baseUrl:      DrupalBaseurl,
+    drupalEntity: relData.MemberOf.Data.Type.entity(),
+    drupalBundle: relData.MemberOf.Data.Type.bundle(),
+    filter:       "id",
+    value:        relData.MemberOf.Data.Id,
+  }
+  memberCol := JsonApiCollection{}
+  u.getSingle(&memberCol)
 
-		assert.Equal(t, expectedJson.MemberOf[i], memberCol.JsonApiData[0].JsonApiAttributes.Title)
-	}
+  assert.Equal(t, expectedJson.MemberOf, memberCol.JsonApiData[0].JsonApiAttributes.Title)
 
 	// Resolve and verify access_terms values
 	assert.NotNil(t, relData.AccessTerms)
@@ -985,13 +981,10 @@ func Test_VerifyRepositoryItem(t *testing.T) {
 	}
 
 	// Member Of
-	assert.Equal(t, 2, len(expectedJson.MemberOf))
-	assert.Equal(t, len(expectedJson.MemberOf), len(relData.MemberOf.Data))
-	for i := range relData.MemberOf.Data {
-		collection := &JsonApiCollection{}
-		relData.MemberOf.Data[i].resolve(t, collection)
-		assert.Equal(t, expectedJson.MemberOf[i], collection.JsonApiData[0].JsonApiAttributes.Title)
-	}
+  assert.NotNil(t, relData.MemberOf)
+  collection := &JsonApiCollection{}
+  relData.MemberOf.Data.resolve(t, collection)
+  assert.Equal(t, expectedJson.MemberOf, collection.JsonApiData[0].JsonApiAttributes.Title)
 
 	// Model
 	model := &JsonApiIslandoraModel{}

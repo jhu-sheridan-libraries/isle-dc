@@ -294,7 +294,7 @@ type JsonApiCollection struct {
 				Data []JsonApiData
 			} `json:"field_access_terms"`
 			MemberOf struct {
-				Data []JsonApiData
+				Data JsonApiData
 			} `json:"field_member_of"`
 		} `json:"relationships"`
 	} `json:"data"`
@@ -389,7 +389,7 @@ type JsonApiIslandoraObj struct {
 				Data JsonApiData
 			} `json:"field_model"`
 			MemberOf struct {
-				Data []JsonApiData
+				Data JsonApiData
 			} `json:"field_member_of"`
 			Publisher struct {
 				Data []JsonApiData
