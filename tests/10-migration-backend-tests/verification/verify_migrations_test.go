@@ -1165,7 +1165,7 @@ func Test_VerifyMediaDocument(t *testing.T) {
 	// Resolve relationships and verify
 	assert.Equal(t, 2, len(expectedJson.AccessTerms))
 	assert.Equal(t, len(expectedJson.AccessTerms), len(document.JsonApiRelationships.AccessTerms.Data))
-  for i := range document.JsonApiRelationships.AccessTerms.Data {
+	for i := range document.JsonApiRelationships.AccessTerms.Data {
 		use := JsonApiIslandoraAccessTerms{}
 		document.JsonApiRelationships.AccessTerms.Data[i].resolve(t, &use)
 		assert.Equal(t, expectedJson.AccessTerms[i], use.JsonApiData[0].JsonApiAttributes.Name)
