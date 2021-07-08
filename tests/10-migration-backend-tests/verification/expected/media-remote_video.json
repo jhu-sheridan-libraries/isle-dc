@@ -3,8 +3,8 @@
   "bundle": "remote_video",
   "name": "A Tour of Go",
   "access_terms": [
-    "Media Group A",
-    "Media Group B"
+    "Media Group B",
+    "Media Group A"
   ],
   "media_of": "Media Migration Repository Item One",
   "embed_url": "https://www.youtube.com/watch?v=ytEkHepK08c"
